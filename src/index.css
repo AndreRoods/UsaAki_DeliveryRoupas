@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { -webkit-tap-highlight-color: transparent; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-cream-50 text-ink-700 font-sans antialiased;
+  }
+  ::selection { @apply bg-wood-200 text-wood-900; }
+}
+
+@layer components {
+  .container-app { @apply mx-auto w-full max-w-md px-4; }
+  .container-app-lg { @apply mx-auto w-full max-w-6xl px-4 sm:px-6; }
+
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-2xl font-semibold transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus-visible:ring-2 focus-visible:ring-wood-500 focus-visible:ring-offset-2; }
+  .btn-primary { @apply btn bg-wood-600 text-cream-50 hover:bg-wood-700 active:bg-wood-800 px-4 py-3 text-sm shadow-sm hover:shadow-pop; }
+  .btn-secondary { @apply btn bg-white text-wood-700 border border-wood-200 hover:border-wood-300 hover:bg-cream-100 px-4 py-3 text-sm; }
+  .btn-ghost { @apply btn text-ink-500 hover:text-wood-700 hover:bg-wood-50 px-3 py-2 text-sm; }
+  .btn-sm { @apply px-3 py-1.5 text-xs; }
+
+  .input { @apply w-full rounded-2xl border border-wood-200 bg-white px-4 py-3 text-sm text-ink-800 placeholder:text-ink-300 transition-colors focus:border-wood-400 focus:outline-none focus:ring-2 focus:ring-wood-100; }
+  .label { @apply block text-sm font-medium text-ink-600 mb-1.5; }
+
+  .card { @apply rounded-3xl border border-wood-100 bg-white shadow-card; }
+  .chip { @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium; }
+
+  .tab-pill { @apply shrink-0 rounded-full px-4 py-2 text-sm font-semibold whitespace-nowrap transition-all; }
+}
+
+/* 3D viewer */
+.scene-3d { perspective: 800px; }
+.cube-3d { transform-style: preserve-3d; }
+.cube-face { backface-visibility: hidden; position: absolute; inset: 0; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d9bd9c; border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: #c79e74; }
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Mobile safe area */
+.pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); }
