@@ -4,6 +4,8 @@ import { fileURLToPath, URL } from 'node:url';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  // O site é publicado em /UsaAki_DeliveryRoupas/ no GitHub Pages.
+  base: '/UsaAki_DeliveryRoupas/',
   plugins: [react()],
   resolve: {
     alias: {
